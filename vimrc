@@ -1,3 +1,5 @@
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 filetype on  " Automatically detect file types.  set nocompatible  " no vi compatibility.
 
 " Add recently accessed projects menu (project plugin)
@@ -80,8 +82,6 @@ set incsearch
 set ignorecase
 set smartcase "set scrolloff=2
 set wildmode=longest,list
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
 set pastetoggle=<F2> " F2 toggles paste mode
 set nobackup
 set noswapfile
