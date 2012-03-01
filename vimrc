@@ -55,7 +55,7 @@ set laststatus=2  " Always show status line.
 
 " gvim specific
 set mousehide  " Hide mouse after chars typed
-"set mouse=a  " Mouse in all modesc
+set mouse=a  " Mouse in all modesc
 
 "Personal Customizations
 "map cap h and cap l to beg and end of line=more intuitive
@@ -82,11 +82,15 @@ set incsearch
 set ignorecase
 set smartcase "set scrolloff=2
 set wildmode=longest,list
-set pastetoggle=<F2> " F2 toggles paste mode
 set nobackup
 set noswapfile
 filetype plugin indent on
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+"this is to toggle the smart indent which messes up pasting
+nnoremap <F2> :set invpaste paste?<CR> 
+set pastetoggle=<F2> "F2 toggles paste in insert mode too
+set showmode "show the change to the user
 
 "folding settings
 set foldmethod=indent   "fold based on indent
@@ -103,6 +107,23 @@ map <C-l> <C-w>l
 " Make scrolling more smooth so I dont loose track of my location
 :map <C-D> <C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y>
 :map <C-U> <C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E>
+
+"Plugin Configurations
+"
+"Conque
+map <leader>c :ConqueTermSplit bash
+map <leader>cv :ConqueTermVSplit bash
+
+
+
+
+
+
+
+
+
+
+
 
 
 
