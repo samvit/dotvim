@@ -99,3 +99,10 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Make scrolling more smooth so I dont loose track of my location
+:map <C-D> <C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y>
+:map <C-U> <C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E>
+
+
+
