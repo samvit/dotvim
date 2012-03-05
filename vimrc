@@ -65,6 +65,10 @@ map mm %
 map ; :
 inoremap jj <ESC>
 
+"So we can split a line somewhere
+nmap nn i<Return><ESC>
+inoremap nn i<Return><ESC>
+
 "cool stuff with leader
 map , <leader>
 "let mapleader=","
@@ -114,7 +118,8 @@ map <C-l> <C-w>l
 map <leader>c :ConqueTermSplit bash
 map <leader>cv :ConqueTermVSplit bash
 
-
+"NERDTRee
+map <leader>nt :NERDTree
 
 
 
