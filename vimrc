@@ -80,6 +80,7 @@ set t_Co=256
 colorscheme molokai
 "colorscheme morning
 "colorscheme mustang
+"
 "other stuff
 set nolist
 set incsearch
