@@ -65,6 +65,9 @@ map mm %
 map ; :
 inoremap jj <ESC>
 
+"For editing the vimrc more easily:
+"
+
 "So we can split a line somewhere
 nmap nn i<Return><ESC>
 inoremap nn i<Return><ESC>
@@ -72,8 +75,8 @@ inoremap nn i<Return><ESC>
 "cool stuff with leader
 map , <leader>
 "let mapleader=","
-nmap <silent> <leader>ev e $MYVIMRC<CR>
-nmap <silent> <leader>sv so $MYVIMRC<CR>
+nnoremap <silent> <leader>ev :vs $MYVIMRC<CR>
+nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 
 "colors
 set t_Co=256
@@ -119,9 +122,10 @@ map <leader>c :ConqueTermSplit bash
 map <leader>cv :ConqueTermVSplit bash
 
 "NERDTRee
-map <leader>nt :NERDTree
+map <leader>nt :NERDTreeToggle<CR>
 
-
+"TagList
+nnoremap <silent> <leader>tl :TlistToggle<CR>
 
 
 
