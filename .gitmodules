@@ -13,3 +13,9 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "tcomment_vim"]
+	path = tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim.git
