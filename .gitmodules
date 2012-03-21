@@ -22,3 +22,9 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/YankRing"]
+	path = bundle/YankRing
+	url = https://github.com/vim-scripts/YankRing.vim.git
+[submodule "bundle/AutoComplPop"]
+	path = bundle/AutoComplPop
+	url = https://github.com/vim-scripts/AutoComplPop.git
