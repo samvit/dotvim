@@ -70,7 +70,7 @@ inoremap jj <ESC>
 
 "So we can split a line somewhere
 nmap nn i<Return><ESC>
-inoremap nn i<Return><ESC>
+" inoremap nn i<Return><ESC>
 
 "cool stuff with leader
 map , <leader>
