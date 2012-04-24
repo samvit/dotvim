@@ -28,7 +28,6 @@ set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
-" colorscheme vividchalk  " Uncomment this to set a default theme
 
 " Formatting
 set ts=2  " Tabs are 2 spaces
