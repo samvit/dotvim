@@ -62,14 +62,13 @@ map H ^
 map L $
 map mm %
 map ; :
-inoremap jj <ESC>
+inoremap kj <ESC>
 
 "For editing the vimrc more easily:
 "
 
 "So we can split a line somewhere
-nmap nn i<Return><ESC>
-" inoremap nn i<Return><ESC>
+nmap NN i<Return><ESC>
 
 "cool stuff with leader
 map , <leader>
