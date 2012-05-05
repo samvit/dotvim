@@ -64,6 +64,8 @@ map L $
 map mm %
 "semicolon as colon
 map ; :
+"to keep original semicolon functionality:
+noremap ;; ;
 "escape is hard to reach so map kj to <ESC>
 noremap kj <ESC>
 inoremap kj <ESC>l
