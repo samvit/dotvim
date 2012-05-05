@@ -65,10 +65,11 @@ map mm %
 "semicolon as colon
 map ; :
 "escape is hard to reach so map kj to <ESC>
-inoremap kj <ESC>
+noremap kj <ESC>
+inoremap kj <ESC>l
 nnoremap kj <ESC>
-" nnoremap <D-S-Up> ddkP
-" nnoremap <D-S-Down> ddp
+vnoremap kj <ESC>
+
 "use Control-Right to move to bottom of window, and C-L for Top
 nnoremap <C-Right> L
 nnoremap <C-Left> H
@@ -113,11 +114,22 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what I use
 
-" Easy buffer navigation
+" Easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Alt-Left/Alt-Right arrow keys change buffers in all modes
+noremap <A-Left> <Esc>:bp<CR>
+inoremap <A-Left> <Esc>:bp<CR>
+nnoremap <A-Left> <Esc>:bp<CR>
+vnoremap <A-Left> <Esc>:bp<CR>
+
+noremap <A-Right> <Esc>:bn<CR>
+inoremap <A-Right> <Esc>:bn<CR>
+nnoremap <A-Right> <Esc>:bn<CR>
+vnoremap <A-Right> <Esc>:bn<CR>
 
 " Make scrolling more smooth so I dont loose track of my location
 :map <C-D> <C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y>
@@ -125,6 +137,11 @@ map <C-l> <C-w>l
 
 "Plugin Configurations
 "
+"Command-T 
+noremap <leader>o <Esc>:CommandT<CR>
+noremap <leader>O <Esc>:CommandTFlush<CR>
+noremap <leader>m <Esc>:CommandTBuffer<CR>
+
 "Conque
 map <leader>c :ConqueTermSplit bash
 map <leader>cv :ConqueTermVSplit bash
@@ -134,13 +151,4 @@ map <leader>nt :NERDTreeToggle<CR>
 
 "TagList
 nnoremap <silent> <leader>tl :TlistToggle<CR>
-
-
-
-
-
-
-
-
-
 
