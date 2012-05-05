@@ -34,3 +34,6 @@
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "bundle/LustyJugggler"]
+	path = bundle/LustyJugggler
+	url = https://github.com/vim-scripts/LustyJuggler.git

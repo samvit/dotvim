@@ -60,21 +60,31 @@ set mouse=a  " Mouse in all modesc
 "map cap h and cap l to beg and end of line=more intuitive
 map H ^
 map L $
+"mm to go to matching
 map mm %
+"semicolon as colon
 map ; :
+"escape is hard to reach so map kj to <ESC>
 inoremap kj <ESC>
+nnoremap kj <ESC>
+" nnoremap <D-S-Up> ddkP
+" nnoremap <D-S-Down> ddp
+"use Control-Right to move to bottom of window, and C-L for Top
+nnoremap <C-Right> L
+nnoremap <C-Left> H
 
-"For editing the vimrc more easily:
-"
+
 
 "So we can split a line somewhere
 nmap NN i<Return><ESC>
 
 "cool stuff with leader
-map , <leader>
 "let mapleader=","
-nnoremap <silent> <leader>ev :vs $MYVIMRC<CR>
-nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
+map , <leader>
+
+"For editing the vimrc more easily:
+nnoremap <leader>ev :vs $MYVIMRC<CR>
+nnoremap <leader>sv :so $MYVIMRC<CR>
 
 "colors
 set t_Co=256
@@ -103,7 +113,7 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what I use
 
-" Easy window navigation
+" Easy buffer navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
