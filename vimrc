@@ -153,4 +153,3 @@ map <leader>nt :NERDTreeToggle<CR>
 
 "TagList
 nnoremap <silent> <leader>tl :TlistToggle<CR>
-
