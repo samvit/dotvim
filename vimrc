@@ -84,6 +84,7 @@ nmap NN i<Return><ESC>
 "cool stuff with leader
 "let mapleader=","
 map , <leader>
+map ,, <leader><leader>
 
 "For editing the vimrc more easily:
 nnoremap <leader>ev :vs $MYVIMRC<CR>
