@@ -71,6 +71,8 @@ noremap kj <ESC>
 inoremap kj <ESC>l
 nnoremap kj <ESC>
 vnoremap kj <ESC>
+"easily escape and save from within insert mode
+inoremap ww <ESC>:w<Return>
 
 "use Control-Right to move to bottom of window, and C-L for Top
 nnoremap <C-Right> L
