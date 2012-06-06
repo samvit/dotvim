@@ -78,7 +78,8 @@ inoremap ww <ESC>:w<Return>l
 nnoremap <C-Right> L
 nnoremap <C-Left> H
 
-
+"format all Tabs
+nnoremap == ggvGb
 
 "So we can split a line somewhere
 nmap NN i<Return><ESC>
