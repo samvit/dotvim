@@ -159,3 +159,6 @@ nnoremap <silent> <leader>tl :TlistToggle<CR>
 
 "EasyMotion triggers:
 map ,, <leader><leader>
+
+"JSBeautify 
+"This plugin is mapped to ,ff to format the current javascript file
