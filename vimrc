@@ -125,6 +125,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+"Keep Selection When Indenting
+vnoremap > >gvi
+vnoremap < <gv
+
 " Alt-Left/Alt-Right arrow keys change buffers in all modes
 noremap <A-Left> <Esc>:bp<CR>
 inoremap <A-Left> <Esc>:bp<CR>
