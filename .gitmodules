@@ -43,3 +43,9 @@
 [submodule "bundle/easymotion"]
 	path = bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/vim-syntaxHilight-ejs-jst"]
+	path = bundle/vim-syntaxHilight-ejs-jst
+	url = https://github.com/briancollins/vim-jst
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git

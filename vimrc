@@ -21,7 +21,7 @@ let g:rails_default_file='config/database.yml'
 syntax enable
 
 set cf  " Enable error files & error jumping.
-set clipboard+=unnamed  " Yanks go on clipboard instead.
+set clipboard=unnamed  " Yanks go on clipboard instead.
 set history=256  " Number of things to remember in history.
 set autowrite  " Writes on make/shell commands
 set ruler  " Ruler on
@@ -119,6 +119,9 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what I use
 
+"Syntax hilight ejs files as html+js
+au BufNewFile,BufRead *.ejs set filetype=html
+
 " Easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -126,8 +129,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 "Keep Selection When Indenting
-vnoremap > >gvi
-vnoremap < <gv
+vnoremap > ><CR>gvi
+vnoremap < <<CR>gv
 
 " Alt-Left/Alt-Right arrow keys change buffers in all modes
 noremap <A-Left> <Esc>:bp<CR>
@@ -166,3 +169,4 @@ map ,, <leader><leader>
 
 "JSBeautify 
 "This plugin is mapped to ,ff to format the current javascript file
+
