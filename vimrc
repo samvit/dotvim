@@ -5,6 +5,9 @@ filetype on  " Automatically detect file types.  set nocompatible  " no vi compa
 " Add recently accessed projects menu (project plugin)
 set viminfo^=\!
 
+"let terminal resize scale the internal windows
+au VimResized * :wincmd =
+
 " Minibuffer Explorer Settings
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
@@ -55,11 +58,14 @@ set laststatus=2  " Always show status line.
 " gvim specific
 set mousehide  " Hide mouse after chars typed
 set mouse=a  " Mouse in all modesc
+ set antialias
 
 "Personal Customizations
 "map cap h and cap l to beg and end of line=more intuitive
-map H ^
-map L $
+noremap H ^
+noremap L $
+noremap HH H
+noremap LL L
 "mm to go to matching
 map mm %
 "semicolon as colon
@@ -84,6 +90,9 @@ nnoremap == ggvGb
 "So we can split a line somewhere
 nmap NN i<Return><ESC>
 
+" Sudo to write
+cnoremap w!! w !sudo tee % >/dev/null
+
 "cool stuff with leader
 "let mapleader=","
 map , <leader>
@@ -107,12 +116,12 @@ set nobackup
 set noswapfile
 filetype plugin indent on
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
-
+set gfn=Monaco:h12
 "this is to toggle the smart indent which messes up pasting
 nnoremap <F2> :set invpaste paste?<CR> 
 set pastetoggle=<F2> "F2 toggles paste in insert mode too
 set showmode "show the change to the user
-
+set shortmess=a
 "folding settings
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
@@ -128,7 +137,38 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-"Keep Selection When Indenting
+"Better Searching
+set hlsearch
+noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
+
+" Visual Mode selection (Press * while selecting something)
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
+
+
+
+"Allow To hilight 5 words at a time
+nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
+
+
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Open a Quickfix window for the last search.
+nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+
+" Ack for the last search.
+nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
+
+"Keep hilight when indenting around
 vnoremap > ><CR>gvi
 vnoremap < <<CR>gv
 
@@ -170,3 +210,5 @@ map ,, <leader><leader>
 "JSBeautify 
 "This plugin is mapped to ,ff to format the current javascript file
 
+"Vim-Powerline
+" let g:Powerline_symbols = 'fancy'
