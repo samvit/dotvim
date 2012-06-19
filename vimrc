@@ -103,14 +103,16 @@ nnoremap <leader>sv :so $MYVIMRC<CR>
 
 "colors
 set t_Co=256
-colorscheme molokai
+colorscheme vividchalk
+" colorscheme molokai
 "colorscheme morning
 "colorscheme mustang
 "other stuff
 set nolist
 set incsearch
 set ignorecase
-set smartcase "set scrolloff=2
+set smartcase 
+set scrolloff=3 "So the cursor doesnt get lost on the edge
 set wildmode=longest,list
 set nobackup
 set noswapfile
