@@ -196,6 +196,9 @@ noremap <leader>o <Esc>:CommandT<CR>
 noremap <leader>O <Esc>:CommandTFlush<CR>
 noremap <leader>m <Esc>:CommandTBuffer<CR>
 
+"lustyJuggler
+let g:LustyJugglerSuppressRubyWarning = 1
+
 "Conque
 map <leader>c :ConqueTermSplit bash
 map <leader>cv :ConqueTermVSplit bash
