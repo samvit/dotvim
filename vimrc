@@ -84,6 +84,15 @@ inoremap ww <ESC>:w<Return>l
 nnoremap <C-Right> L
 nnoremap <C-Left> H
 
+"normal text selection in insert mode
+if has("gui_macvim")
+    let macvim_hig_shift_movement = 1
+endif
+
+au WinLeave * set nocursorline
+au WinEnter * set cursorline
+set cursorline
+
 "format all Tabs
 nnoremap == ggvGb
 
@@ -129,6 +138,23 @@ set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what I use
+
+"Relative Line Numbering
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+"Absolute numbering on FocusLost
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+"Absolute numbering on Insert Mode
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 "Syntax hilight ejs files as html+js
 au BufNewFile,BufRead *.ejs set filetype=html
@@ -193,7 +219,7 @@ vnoremap <A-Right> <Esc>:bn<CR>
 "
 "Command-T 
 noremap <leader>o <Esc>:CommandT<CR>
-noremap <leader>O <Esc>:CommandTFlush<CR>
+noremap <leader>f <Esc>:CommandTFlush<CR>
 noremap <leader>m <Esc>:CommandTBuffer<CR>
 
 "lustyJuggler
