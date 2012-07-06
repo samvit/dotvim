@@ -148,13 +148,13 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <C-n> :call NumberToggle()<cr>
-"Absolute numbering on FocusLost
-:au FocusLost * :set number
-:au FocusGained * :set relativenumber
-"Absolute numbering on Insert Mode
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
+nnoremap <leader>rl :call NumberToggle()<cr>
+" "Absolute numbering on FocusLost
+" :au FocusLost * :set number
+" :au FocusGained * :set relativenumber
+" "Absolute numbering on Insert Mode
+" autocmd InsertEnter * :set number
+" autocmd InsertLeave * :set relativenumber
 
 "Syntax hilight ejs files as html+js
 au BufNewFile,BufRead *.ejs set filetype=html
@@ -218,6 +218,7 @@ vnoremap <A-Right> <Esc>:bn<CR>
 "Plugin Configurations
 "
 "Command-T 
+noremap <leader>ct :CommandT
 noremap <leader>o <Esc>:CommandT<CR>
 noremap <leader>f <Esc>:CommandTFlush<CR>
 noremap <leader>m <Esc>:CommandTBuffer<CR>
