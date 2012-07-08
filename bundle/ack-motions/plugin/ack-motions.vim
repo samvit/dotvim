@@ -8,10 +8,10 @@
 " Note: If the text covered by a motion contains a newline it won't work.  Ack
 " searches line-by-line.
 
-nnoremap <silent> <leader>A :set opfunc=<SID>AckMotion<CR>g@
-xnoremap <silent> <leader>A :<C-U>call <SID>AckMotion(visualmode())<CR>
+nnoremap <silent> <leader>a :set opfunc=<SID>AckMotion<CR>g@
+xnoremap <silent> <leader>a :<C-U>call <SID>AckMotion(visualmode())<CR>
 
-nnoremap <bs> :Ack! '\b<c-r><c-w>\b'<cr>
+nnoremap <d-bs> :Ack! '\b<c-r><c-w>\b'<cr>
 xnoremap <silent> <bs> :<C-U>call <SID>AckMotion(visualmode())<CR>
 
 function! s:CopyMotionForType(type)

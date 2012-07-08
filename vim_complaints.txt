@@ -1,0 +1,10 @@
+hilight current line, and maybe current column
+get that red sidey bar?
+fix the powerline to be pointy :)
+better in-line controls/manipulation
+javascript error-catchine, formatting, better syntax hilighting
+javascript console.log snip complete
+a keymapping to edit this file
+keymappings to command-t various important dirs
+keymapping to add a space where i am right now (like nn for a single space)
+fix "mm/% for matching parens, matchit seems to have broken some functionality"

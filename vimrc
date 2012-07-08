@@ -110,6 +110,9 @@ map , <leader>
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
+"For editing the complaints fild more easily:
+nnoremap <leader>ec :vs ~/.vim/complaints.txt<CR> 
+
 "colors
 set t_Co=256
 colorscheme vividchalk
@@ -140,15 +143,15 @@ set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what I use
 
 "Relative Line Numbering
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
-
-nnoremap <leader>rl :call NumberToggle()<cr>
+" function! NumberToggle()
+"   if(&relativenumber == 1)
+"     set number
+"   else
+"     set relativenumber
+"   endif
+" endfunc
+" 
+" nnoremap <leader>rl :call NumberToggle()<cr>
 " "Absolute numbering on FocusLost
 " :au FocusLost * :set number
 " :au FocusGained * :set relativenumber
@@ -164,6 +167,12 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+"Easy tab navigation
+map <d-up> :tabr<cr>
+map <d-down> :tabl<cr>
+map <d-left> :tabp<cr>
+map <d-right> :tabn<cr>
 
 "Better Searching
 set hlsearch
@@ -244,3 +253,7 @@ map ,, <leader><leader>
 
 "Vim-Powerline
 " let g:Powerline_symbols = 'fancy'
+
+"Rename
+":rename filename
+"to rename the current file

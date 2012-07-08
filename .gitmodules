@@ -64,3 +64,6 @@
 [submodule "bundle/vim-matchit"]
 	path = bundle/vim-matchit
 	url = https://github.com/tsaleh/vim-matchit.git
+[submodule "bundle/rename"]
+	path = bundle/rename
+	url = https://github.com/danro/rename.vim.git
