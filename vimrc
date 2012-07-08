@@ -99,6 +99,9 @@ nnoremap == ggvGb
 "So we can split a line somewhere
 nmap NN i<Return><ESC>
 
+"Insert a space
+nmap S i <ESC>
+
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
@@ -257,3 +260,6 @@ map ,, <leader><leader>
 "Rename
 ":rename filename
 "to rename the current file
+
+"Ack:
+"<leader>a<motion>, or 
