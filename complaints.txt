@@ -2,16 +2,8 @@
 Vim Complaints
 ##################################################
 
-/*get that red sidey bar?*/
-make powerline be ccolored all the time, not just when the window is in focus
+make powerline be colored all the time, not just when the window is in focus
 better in-line controls/manipulation
 javascript error-catching, formatting, better syntax hilighting
 keymappings to command-t various important dirs
 get a better find and replace
-
-
-##################################################
-Computer Complaints
-##################################################
-
-
