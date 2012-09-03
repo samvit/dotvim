@@ -442,6 +442,8 @@ function! g:Jsbeautify()
 					if s:last_text == "else"
 						call s:print_space()
 					elseif (s:last_type == "TK_START_EXPR" || s:last_text == "=" || s:last_text == ",") && s:token_text == "function"
+            "EDIT
+						call s:print_space()
 						" no need to force newline on "function":
 						" DONOTHINT
 					elseif s:last_type == "TK_WORD" && (s:last_text == "return" || s:last_text == "throw")

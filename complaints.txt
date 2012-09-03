@@ -1,9 +1,17 @@
-hilight current line, and maybe current column
-get that red sidey bar?
-fix the powerline to be pointy :)
+##################################################
+Vim Complaints
+##################################################
+
+/*get that red sidey bar?*/
+make powerline be ccolored all the time, not just when the window is in focus
 better in-line controls/manipulation
-javascript error-catchine, formatting, better syntax hilighting
-javascript console.log snip complete
+javascript error-catching, formatting, better syntax hilighting
 keymappings to command-t various important dirs
-fix "mm/% for matching parens, matchit seems to have broken some functionality"
+get a better find and replace
+
+
+##################################################
+Computer Complaints
+##################################################
+
 

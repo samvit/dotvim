@@ -75,23 +75,24 @@ noremap ;; ;
 "escape is hard to reach so map kj to <ESC>
 noremap kj <ESC>
 inoremap kj <ESC>l
-nnoremap kj <ESC>
+" nnoremap kj <ESC>
 vnoremap kj <ESC>
+
+"scroll up and down faster with JJ and KK
+nmap KK 20k
+nmap JJ 20j
+
 "easily escape and save from within insert mode
 inoremap ww <ESC>:w<Return>l
-
-"use Control-Right to move to bottom of window, and C-L for Top
-nnoremap <C-Right> L
-nnoremap <C-Left> H
 
 "normal text selection in insert mode
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
+    "Add hilight to current line only in MacVim
+    au WinLeave * set nocursorline
+    au WinEnter * set cursorline
+    set cursorline
 endif
-
-au WinLeave * set nocursorline
-au WinEnter * set cursorline
-set cursorline
 
 "format all Tabs
 nnoremap == ggvGb
@@ -108,6 +109,8 @@ cnoremap w!! w !sudo tee % >/dev/null
 "cool stuff with leader
 "let mapleader=","
 map , <leader>
+"so we dont lose ,'s functionality
+noremap ,, ,
 
 "For editing the vimrc more easily:
 nnoremap <leader>ev :vs $MYVIMRC<CR>
@@ -115,6 +118,12 @@ nnoremap <leader>sv :so $MYVIMRC<CR>
 
 "For editing the complaints fild more easily:
 nnoremap <leader>ec :vs ~/.vim/complaints.txt<CR> 
+
+"For accessing the scratchpad fild more easily:
+nnoremap <leader>es :e ~/junk/scratchPad.txt<CR> 
+"
+"For accessing the bashrc fild more easily:
+nnoremap <leader>eb :vs ~/.bashrc<CR> 
 
 "colors
 set t_Co=256
@@ -171,11 +180,19 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Easy window navigation from keyboard too
+map ggh <C-w>h
+map ggj <C-w>j
+map ggk <C-w>k
+map ggl <C-w>l
+
 "Easy tab navigation
-map <d-up> :tabr<cr>
-map <d-down> :tabl<cr>
-map <d-left> :tabp<cr>
-map <d-right> :tabn<cr>
+map <d-Up> :tabr<cr>
+map <d-Down> :tabl<cr>
+map <d-Left> :tabp<cr>
+map <d-Right> :tabn<cr>
+map gh :tabp<cr>
+map gl :tabn<cr>
 
 "Better Searching
 set hlsearch
@@ -230,8 +247,9 @@ vnoremap <A-Right> <Esc>:bn<CR>
 "Plugin Configurations
 "
 "Command-T 
-noremap <leader>ct :CommandT
+noremap <leader>T :CommandT
 noremap <leader>o <Esc>:CommandT<CR>
+noremap <space><space> <Esc>:CommandT<CR>
 noremap <leader>f <Esc>:CommandTFlush<CR>
 noremap <leader>m <Esc>:CommandTBuffer<CR>
 
@@ -255,11 +273,17 @@ map ,, <leader><leader>
 "This plugin is mapped to ,ff to format the current javascript file
 
 "Vim-Powerline
-" let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8 " Necessary to show unicode glyphs
 
 "Rename
 ":rename filename
 "to rename the current file
 
 "Ack:
-"<leader>a<motion>, or 
+map :ack :Ack
+map <leader>a :Ack
+" <leader>a<motion>, or 
+if has("gui_running")
+  set guifont=Monaco\ for\ Powerline:h13
+endif

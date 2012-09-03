@@ -67,3 +67,9 @@
 [submodule "bundle/rename"]
 	path = bundle/rename
 	url = https://github.com/danro/rename.vim.git
+[submodule "bundle/vim-supertab"]
+	path = bundle/vim-supertab
+	url = https://github.com/tsaleh/vim-supertab.git
+[submodule "bundle/greplace"]
+	path = bundle/greplace
+	url = https://github.com/vim-scripts/greplace.vim.git
