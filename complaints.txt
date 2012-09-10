@@ -1,9 +1,0 @@
-##################################################
-Vim Complaints
-##################################################
-
-make powerline be colored all the time, not just when the window is in focus
-better in-line controls/manipulation
-javascript error-catching, formatting, better syntax hilighting
-keymappings to command-t various important dirs
-get a better find and replace
