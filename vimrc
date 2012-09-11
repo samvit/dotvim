@@ -58,7 +58,7 @@ set laststatus=2  " Always show status line.
 " gvim specific
 set mousehide  " Hide mouse after chars typed
 set mouse=a  " Mouse in all modesc
- set antialias
+set antialias
 
 "Personal Customizations
 "map cap h and cap l to beg and end of line=more intuitive
@@ -87,11 +87,11 @@ inoremap ww <ESC>:w<Return>l
 
 "normal text selection in insert mode
 if has("gui_macvim")
-    let macvim_hig_shift_movement = 1
-    "Add hilight to current line only in MacVim
-    au WinLeave * set nocursorline
-    au WinEnter * set cursorline
-    set cursorline
+  let macvim_hig_shift_movement = 1
+  "Add hilight to current line only in MacVim
+  au WinLeave * set nocursorline
+  au WinEnter * set cursorline
+  set cursorline
 endif
 
 "format all Tabs
@@ -116,13 +116,13 @@ noremap ,, ,
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
 
-"For editing the complaints fild more easily:
+"For editing the complaints file more easily:
 nnoremap <leader>ec :vs ~/.vim/complaints.txt<CR> 
 
-"For accessing the scratchpad fild more easily:
+"For accessing the scratchpad file more easily:
 nnoremap <leader>es :e ~/junk/scratchPad.txt<CR> 
 "
-"For accessing the bashrc fild more easily:
+"For accessing the bashrc file more easily:
 nnoremap <leader>eb :vs ~/.bashrc<CR> 
 
 "colors
@@ -186,13 +186,15 @@ map ggj <C-w>j
 map ggk <C-w>k
 map ggl <C-w>l
 
-"Easy tab navigation
+"Easy tab navigation from keyboard or with command-arrow
 map <d-Up> :tabr<cr>
 map <d-Down> :tabl<cr>
 map <d-Left> :tabp<cr>
 map <d-Right> :tabn<cr>
 map gh :tabp<cr>
 map gl :tabn<cr>
+map gH :tabr<cr>
+map gL :tabl<cr>
 
 "Better Searching
 set hlsearch
