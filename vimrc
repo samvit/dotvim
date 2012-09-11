@@ -100,9 +100,6 @@ nnoremap == ggvGb
 "So we can split a line somewhere
 nmap NN i<Return><ESC>
 
-"Insert a space
-nmap S i <ESC>
-
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
@@ -181,16 +178,18 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Easy window navigation from keyboard too
-map ggh <C-w>h
-map ggj <C-w>j
-map ggk <C-w>k
-map ggl <C-w>l
+map sh <C-w>h
+map sj <C-w>j
+map sk <C-w>k
+map sl <C-w>l
 
-"Easy tab navigation from keyboard or with command-arrow
+"Easy tab navigation 
 map <d-Up> :tabr<cr>
 map <d-Down> :tabl<cr>
 map <d-Left> :tabp<cr>
 map <d-Right> :tabn<cr>
+
+"Easy tab navigation from keyboard too
 map gh :tabp<cr>
 map gl :tabn<cr>
 map gH :tabr<cr>
