@@ -81,5 +81,8 @@ snippet gett
 #Console.log
 snippet c
 	console.log(${1});${2}
+snippet con
+	console.log(${1});${2}
+#Log specific variable
 snippet log
-	console.log("${1} = ", $1);${2}
+	console.log("${1: Variable} = ", $1);${2}
