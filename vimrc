@@ -78,9 +78,13 @@ inoremap kj <ESC>l
 " nnoremap kj <ESC>
 vnoremap kj <ESC>
 
-"scroll up and down faster with JJ and KK
-nmap KK 20k
-nmap JJ 20j
+"scroll up and down faster with J and K
+noremap K 5k
+noremap J 5j
+
+"keep functionality of K and J with <leader>J/K
+nnoremap <leader>K K
+nnoremap <leader>J J
 
 "easily escape and save from within insert mode
 inoremap ww <ESC>:w<Return>l
@@ -177,11 +181,19 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" first disable the s key because its better to use c for everything anyways
+map s <Nop>
 " Easy window navigation from keyboard too
 map sh <C-w>h
 map sj <C-w>j
 map sk <C-w>k
 map sl <C-w>l
+"
+" Easy window navigation from keyboard too
+map sH <C-w>H
+map sJ <C-w>J
+map sK <C-w>H
+map sL <C-w>L
 
 "Easy tab navigation 
 map <d-Up> :tabr<cr>
