@@ -1,3 +1,4 @@
+#NOTE: This Configuration requires a ruby-enabled vim build
 #Installation:
 	
 #    git clone git://github.com/samvit/dotvim.git ~/.vim

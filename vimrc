@@ -172,7 +172,7 @@ set foldlevel=1         "this is just what I use
 " autocmd InsertEnter * :set number
 " autocmd InsertLeave * :set relativenumber
 
-"Syntax hilight ejs files as html+js
+"Syntax hilight ejs files as html+js -- edit killed this after i added the vim-jst plugin
 au BufNewFile,BufRead *.ejs set filetype=html
 
 " Easy window navigation
