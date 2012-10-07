@@ -61,6 +61,9 @@ set mouse=a  " Mouse in all modesc
 set antialias
 
 "Personal Customizations
+"So I can copy a whole line without the newline like yy has 
+noremap Y ^y$  
+
 "map cap h and cap l to beg and end of line=more intuitive
 noremap H ^
 noremap L $
