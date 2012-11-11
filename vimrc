@@ -61,6 +61,10 @@ set mouse=a  " Mouse in all modesc
 set antialias
 
 "Personal Customizations
+
+"Make redo easier
+noremap rr <c-r>
+
 "So I can copy a whole line without the newline like yy has 
 noremap Y ^y$  
 
@@ -73,6 +77,7 @@ noremap LL L
 map mm %
 "semicolon as colon
 map ; :
+map :qqq :q!<CR>
 "to keep original semicolon functionality:
 noremap ;; ;
 "escape is hard to reach so map kj to <ESC>
@@ -86,8 +91,8 @@ noremap K 5k
 noremap J 5j
 
 "keep functionality of K and J with <leader>J/K
-nnoremap <leader>K K
-nnoremap <leader>J J
+noremap <leader>K K
+noremap <leader>J J
 
 "easily escape and save from within insert mode
 inoremap ww <ESC>:w<Return>l
@@ -100,9 +105,6 @@ if has("gui_macvim")
   au WinEnter * set cursorline
   set cursorline
 endif
-
-"format all Tabs
-nnoremap == ggvGb
 
 "So we can split a line somewhere
 nmap NN i<Return><ESC>
@@ -125,8 +127,8 @@ nnoremap <leader>ec :vs ~/.vim/complaints.txt<CR>
 
 "For accessing the scratchpad file more easily:
 nnoremap <leader>es :e ~/junk/scratchPad.txt<CR> 
-"
-"For accessing the bashrc file more easily:
+
+"For editing the bashrc file more easily:
 nnoremap <leader>eb :vs ~/.bashrc<CR> 
 
 "colors
@@ -225,10 +227,10 @@ endfunction
 
 
 "Allow To hilight 5 words at a time
-nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
-nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
-nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
-nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
+nnoremap <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+nnoremap <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+nnoremap <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
+nnoremap <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
 
 
 " Keep search matches in the middle of the window.
@@ -279,8 +281,8 @@ map <leader>cv :ConqueTermVSplit bash
 "NERDTRee
 map <leader>nt :NERDTreeToggle<CR>
 
-"TagList
-nnoremap <silent> <leader>tl :TlistToggle<CR>
+"Tagbar
+nmap <leader>t :TagbarToggle<CR>
 
 "EasyMotion triggers:
 map ,, <leader><leader>
@@ -300,6 +302,7 @@ set encoding=utf-8 " Necessary to show unicode glyphs
 map :ack :Ack
 map <leader>a :Ack
 " <leader>a<motion>, or 
+
 if has("gui_running")
   set guifont=Monaco\ for\ Powerline:h13
 endif

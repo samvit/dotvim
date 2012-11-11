@@ -19,9 +19,6 @@
 [submodule "bundle/tcomment_vim"]
 	path = bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "bundle/taglist"]
-	path = bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "bundle/AutoComplPop"]
 	path = bundle/AutoComplPop
 	url = https://github.com/vim-scripts/AutoComplPop.git
@@ -76,3 +73,6 @@
 [submodule "bundle/vim-jst"]
 	path = bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
+[submodule "tagbar"]
+	path = tagbar
+	url = https://github.com/majutsushi/tagbar.git

@@ -620,6 +620,8 @@ function! g:Jsbeautify()
 	:g/.*/d
 	let @0 = ret
 	:put!0
+  "My addition
+  %s/function(/function (/g
 endfunction
 
 nnoremap <silent> <leader>ff :call g:Jsbeautify()<cr>
