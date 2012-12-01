@@ -88,3 +88,34 @@ snippet con
 #Log specific variable
 snippet log
 	console.log("${1: Variable} = ", $1);${2}
+snippet parallel
+	async.parallel({
+		one: function (parallelCallback) {
+			parallelCallback(null, oneResults);
+		},
+		two: function (parallelCallback) {
+			parallelCallback(null, twoResults);
+		}
+	}, function (err, results) {
+		if (err) throw err;
+		//results = { one: oneResults, two: twoResults };
+	});
+snippet foreach
+	async.forEach(array, function (item, forEachCallback) {
+		forEachCallback(null);
+	}, function (err) {
+		if (err) throw err;
+	});
+snippet series
+	async.series({
+		one: function(seriesCallback){
+			seriesCallback(null, oneResults);
+		},
+		two: function(seriesCallback){
+			seriesCallback(null, twoResults);
+		},
+	},
+	function(err, results) {
+		if (err) throw err;
+		//results = { one: oneResults, two: twoResults };
+	});

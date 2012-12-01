@@ -66,7 +66,7 @@ set antialias
 noremap rr <c-r>
 
 "So I can copy a whole line without the newline like yy has 
-noremap Y ^y$  
+noremap Y y$  
 
 "map cap h and cap l to beg and end of line=more intuitive
 noremap H ^
@@ -74,7 +74,12 @@ noremap L $
 noremap HH H
 noremap LL L
 "mm to go to matching
-map mm %
+map m %
+noremap <leader>mm m
+"M go to hilight till the rest of this {} block
+noremap M V$%
+"keep M's functionality:
+noremap <leader>MM M
 "semicolon as colon
 map ; :
 map :qqq :q!<CR>
@@ -107,7 +112,7 @@ if has("gui_macvim")
 endif
 
 "So we can split a line somewhere
-nmap NN i<Return><ESC>
+nmap S i<CR><ESC>
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
@@ -116,7 +121,8 @@ cnoremap w!! w !sudo tee % >/dev/null
 "let mapleader=","
 map , <leader>
 "so we dont lose ,'s functionality
-noremap ,, ,
+"note: this is being overridden for <leader><leader> right now
+noremap ,, , 
 
 "For editing the vimrc more easily:
 nnoremap <leader>ev :vs $MYVIMRC<CR>
@@ -306,3 +312,7 @@ map <leader>a :Ack
 if has("gui_running")
   set guifont=Monaco\ for\ Powerline:h13
 endif
+
+"make regex's normal?
+" nnoremap / /\v
+" vnoremap / /\v

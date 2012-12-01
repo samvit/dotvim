@@ -73,6 +73,3 @@
 [submodule "bundle/vim-jst"]
 	path = bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
-[submodule "tagbar"]
-	path = tagbar
-	url = https://github.com/majutsushi/tagbar.git
