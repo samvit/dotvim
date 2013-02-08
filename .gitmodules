@@ -76,3 +76,21 @@
 [submodule "bundle/NrrwRgn"]
 	path = bundle/NrrwRgn
 	url = https://github.com/chrisbra/NrrwRgn.git
+[submodule "bundle/VimClojure"]
+	path = bundle/VimClojure
+	url = https://github.com/vim-scripts/VimClojure.git
+[submodule "bundle/vim-closedform"]
+	path = bundle/vim-closedform
+	url = https://github.com/aiba/vim-closedform.git
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = git@github.com:groenewege/vim-less.git
+[submodule "bundle/vim-clojure-static"]
+	path = bundle/vim-clojure-static
+	url = git@github.com:guns/vim-clojure-static.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "bundle/vim-seek"]
+	path = bundle/vim-seek
+	url = git@github.com:goldfeld/vim-seek.git

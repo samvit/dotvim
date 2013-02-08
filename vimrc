@@ -1,7 +1,7 @@
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 filetype on  " Automatically detect file types.  set nocompatible  " no vi compatibility.
-
+left
 " Add recently accessed projects menu (project plugin)
 set viminfo^=\!
 
@@ -18,9 +18,6 @@ let g:miniBufExplModSelTarget = 1
 map <silent> <m-p> :cp <cr>
 map <silent> <m-n> :cn <cr>
 
-" Change which file opens after executing :Rails command
-let g:rails_default_file='config/database.yml'
-
 syntax enable
 
 set cf  " Enable error files & error jumping.
@@ -36,7 +33,7 @@ set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 set ts=2  " Tabs are 2 spaces
 set bs=2  " Backspace over everything in insert mode
 set shiftwidth=2  " Tabs under smart indent
-set nocp incsearch
+set incsearch
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
@@ -62,6 +59,9 @@ set antialias
 
 "Personal Customizations
 
+" Insert the directory of the current buffer in command line mode
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 "Make redo easier
 noremap rr <c-r>
 
@@ -71,6 +71,7 @@ noremap Y y$
 "map cap h and cap l to beg and end of line=more intuitive
 noremap H ^
 noremap L $
+vnoremap L g_
 noremap HH H
 noremap LL L
 "mm to go to matching
@@ -78,6 +79,7 @@ map m %
 noremap <leader>mm m
 "M go to hilight till the rest of this {} block
 noremap M V$%
+noremap MM V^%
 "keep M's functionality:
 noremap <leader>MM M
 "semicolon as colon
@@ -117,8 +119,9 @@ nmap S i<CR><ESC>
 cnoremap w!! w !sudo tee % >/dev/null
 
 "cool stuff with leader
-"let mapleader=","
-map , <leader>
+let mapleader=","
+let maplocalleader="\\"
+" map , <leader>
 "so we dont lose ,'s functionality
 "note: this is being overridden for <leader><leader> right now
 noremap ,, , 
@@ -242,6 +245,12 @@ nnoremap <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+" Buffer Window Resizing
+nnoremap <c-right> 5<c-w>>
+nnoremap <c-left> 5<c-w><
+nnoremap <c-up> 5<c-w>+
+nnoremap <c-down> 5<c-w>-
+
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
@@ -252,21 +261,6 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 vnoremap > ><CR>gvi
 vnoremap < <<CR>gv
 
-" Alt-Left/Alt-Right arrow keys change buffers in all modes
-noremap <A-Left> <Esc>:bp<CR>
-inoremap <A-Left> <Esc>:bp<CR>
-nnoremap <A-Left> <Esc>:bp<CR>
-vnoremap <A-Left> <Esc>:bp<CR>
-
-noremap <A-Right> <Esc>:bn<CR>
-inoremap <A-Right> <Esc>:bn<CR>
-nnoremap <A-Right> <Esc>:bn<CR>
-vnoremap <A-Right> <Esc>:bn<CR>
-
-" Make scrolling more smooth so I dont loose track of my location
-" :map <C-D> <C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y><C-E><C-E><C-Y><C-E><C-Y>
-" :map <C-U> <C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E><C-Y><C-Y><C-E><C-Y><C-E>
-
 "Plugin Configurations
 "
 "Command-T 
@@ -275,9 +269,6 @@ noremap <leader>o <Esc>:CommandT<CR>
 noremap <space><space> <Esc>:CommandT<CR>
 noremap <leader>f <Esc>:CommandTFlush<CR>
 noremap <leader>m <Esc>:CommandTBuffer<CR>
-
-"lustyJuggler
-let g:LustyJugglerSuppressRubyWarning = 1
 
 "Conque
 map <leader>c :ConqueTermSplit bash
@@ -308,6 +299,14 @@ map :ack :Ack
 map <leader>a :Ack
 " <leader>a<motion>, or 
 
+"vim-seek
+let g:SeekKey = 'f'
+let g:SeekBackKey = 'F'
+
 if has("gui_running")
-  set guifont=Monaco\ for\ Powerline:h13
+    set guifont=Monaco\ for\ Powerline:h13
+    set guioptions=-t
 endif
+
+"NarrowRegion
+map :narrow<CR> :NarrowRegion<CR>
