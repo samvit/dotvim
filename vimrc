@@ -120,7 +120,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 
 "cool stuff with leader
 let mapleader=","
-let maplocalleader="\\"
+" let maplocalleader="\\"
 " map , <leader>
 "so we dont lose ,'s functionality
 "note: this is being overridden for <leader><leader> right now
@@ -305,7 +305,7 @@ let g:SeekBackKey = 'F'
 
 if has("gui_running")
     set guifont=Monaco\ for\ Powerline:h13
-    set guioptions=-t
+    set guioptions=egmrt
 endif
 
 "NarrowRegion
