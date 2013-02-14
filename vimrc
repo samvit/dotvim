@@ -68,6 +68,10 @@ noremap rr <c-r>
 "So I can copy a whole line without the newline like yy has 
 noremap Y y$  
 
+"So I can duplicate and coment in one keystroke
+vmap gy ygvgckp
+nmap gyy yypgcck
+
 "map cap h and cap l to beg and end of line=more intuitive
 noremap H ^
 noremap L $
@@ -119,9 +123,9 @@ nmap S i<CR><ESC>
 cnoremap w!! w !sudo tee % >/dev/null
 
 "cool stuff with leader
-let mapleader=","
+" let mapleader=","
 " let maplocalleader="\\"
-" map , <leader>
+map , <leader>
 "so we dont lose ,'s functionality
 "note: this is being overridden for <leader><leader> right now
 noremap ,, , 
@@ -310,3 +314,6 @@ endif
 
 "NarrowRegion
 map :narrow<CR> :NarrowRegion<CR>
+
+" Turn off delimateMate for Clojure files (It's annoying with Clojure)
+au! FileType clojure let b:loaded_delimitMate=1
