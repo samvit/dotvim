@@ -1,7 +1,6 @@
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 filetype on  " Automatically detect file types.  set nocompatible  " no vi compatibility.
-left
 " Add recently accessed projects menu (project plugin)
 set viminfo^=\!
 
@@ -24,6 +23,7 @@ set cf  " Enable error files & error jumping.
 set clipboard=unnamed  " Yanks go on clipboard instead.
 set history=256  " Number of things to remember in history.
 set autowrite  " Writes on make/shell commands
+set autoread  " reloads upon file change
 set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
@@ -50,6 +50,7 @@ set list
 set lcs=tab:\ \ ,eol:$,trail:~,extends:>,precedes:<
 set novisualbell  " No blinking .
 set noerrorbells  " No noise.
+set noeb vb t_vb=
 set laststatus=2  " Always show status line.
 
 " gvim specific
@@ -62,30 +63,36 @@ set antialias
 " Insert the directory of the current buffer in command line mode
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+"leader mappings
+let mapleader = ","
+
 "Make redo easier
-noremap rr <c-r>
+noremap r <c-r>
+
+"Dont lose r's funktionality
+noremap <leader>r r
 
 "So I can copy a whole line without the newline like yy has 
 noremap Y y$  
 
 "So I can duplicate and coment in one keystroke
-vmap gy ygvgckp
-nmap gyy yypgcck
+vmap gy ygvgcp
+nmap gyy yyPgccj
 
 "map cap h and cap l to beg and end of line=more intuitive
 noremap H ^
 noremap L $
 vnoremap L g_
-noremap HH H
-noremap LL L
+noremap <leader>H H
+noremap <leader>L L
 "mm to go to matching
 map m %
 noremap <leader>mm m
 "M go to hilight till the rest of this {} block
-noremap M V$%
-noremap MM V^%
+noremap M $v%
+noremap MM ^v%
 "keep M's functionality:
-noremap <leader>MM M
+noremap <leader>M M
 "semicolon as colon
 map ; :
 map :qqq :q!<CR>
@@ -122,14 +129,6 @@ nmap S i<CR><ESC>
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
-"cool stuff with leader
-" let mapleader=","
-" let maplocalleader="\\"
-map , <leader>
-"so we dont lose ,'s functionality
-"note: this is being overridden for <leader><leader> right now
-noremap ,, , 
-
 "For editing the vimrc more easily:
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
@@ -137,6 +136,8 @@ nnoremap <leader>sv :so $MYVIMRC<CR>
 "For editing the complaints file more easily:
 nnoremap <leader>ec :vs ~/.vim/complaints.txt<CR> 
 
+"For editing the complaints file more easily:
+nnoremap :todo :vs ~/Dropbox/todo.txt<CR>
 "For accessing the scratchpad file more easily:
 nnoremap <leader>es :e ~/junk/scratchPad.txt<CR> 
 
@@ -191,6 +192,7 @@ set foldlevel=1         "this is just what I use
 
 "Syntax hilight ejs files as html+js -- edit killed this after i added the vim-jst plugin
 au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.cljs set filetype=clojure
 
 " Easy window navigation
 map <C-h> <C-w>h
@@ -264,6 +266,7 @@ nnoremap <silent> <leader>/ :execute "Ack! '" . substitute(substitute(substitute
 "Keep hilight when indenting around
 vnoremap > ><CR>gvi
 vnoremap < <<CR>gv
+noremap NN =ip 
 
 "Plugin Configurations
 "
@@ -279,7 +282,7 @@ map <leader>c :ConqueTermSplit bash
 map <leader>cv :ConqueTermVSplit bash
 
 "NERDTRee
-map <leader>nt :NERDTreeToggle<CR>
+map <space> :NERDTreeToggle<CR>
 
 "Tagbar
 nmap <leader>t :TagbarToggle<CR>
@@ -317,3 +320,18 @@ map :narrow<CR> :NarrowRegion<CR>
 
 " Turn off delimateMate for Clojure files (It's annoying with Clojure)
 au! FileType clojure let b:loaded_delimitMate=1
+
+"Vim-closedform by aaron
+imap <M-;> <Esc>:AppendClosingFormSymbol<CR>a
+nmap <M-;> <Esc>:AppendClosingFormSymbol<CR>
+imap <M-:> <Esc>:AppendAllClosingFormSymbols<CR>a
+nmap <M-:> <Esc>:AppendAllClosingFormSymbols<CR>
+
+"Rainbow Parenthesis
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+"gitgutter
+highlight clear SignColumn

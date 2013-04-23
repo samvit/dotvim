@@ -3,14 +3,20 @@
 snippet f
 	(${1})${2}
 snippet print
-	(println "${1: Variable} = ", $1)${2}
+	(println "${1: Variable} = " $1)${2}
 snippet println
-	(println "${1: Variable} = ", $1)${2}
+	(println "${1: Variable} = " $1)${2}
 #Log specific variable
 snippet log
-	(log/info "${1: Variable} = ", $1)${2}
+	(log/info "${1: Variable} = " $1)${2}
+snippet con
+	(.log js/console ${1: Variable})${2}
+snippet vcon
+	(.log js/console "${1: Variable} = " $1)${2}
+snippet lcon
+	(.log js/console "${1: Message} = " ${2: Variable})${3}
 snippet plog
-	(pretty-log "${1: Variable} = ", $1)${2}
+	(pretty-log "${1: Variable} = " $1)${2}
 
 #OTHER SNIPS
 snippet comm
@@ -31,7 +37,7 @@ snippet defma
 	(defmacro ${1:name} "${2:doc-string}" ${3:dispatch-fn})
 snippet defn
 	(defn ${1:name} "${2:doc-string}" [${3:arg-list}]
-	  ${4})
+		${4})
 snippet defp
 	(defprotocol ${1:name}
 	  ${2})

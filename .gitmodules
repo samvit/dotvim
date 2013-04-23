@@ -94,3 +94,15 @@
 [submodule "bundle/vim-seek"]
 	path = bundle/vim-seek
 	url = git@github.com:goldfeld/vim-seek.git
+[submodule "bundle/camelcasemotion"]
+	path = bundle/camelcasemotion
+	url = git@github.com:vim-scripts/camelcasemotion.git
+[submodule "bundle/rainbow_parenthesis"]
+	path = bundle/rainbow_parenthesis
+	url = git@github.com:kien/rainbow_parentheses.vim.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "bundle/vim-scala"]
+	path = bundle/vim-scala
+	url = git@github.com:derekwyatt/vim-scala.git
