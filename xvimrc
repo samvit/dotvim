@@ -1,0 +1,44 @@
+"Mappings for the most excellent XVIM Plugin to Xcode
+"https://github.com/JugglerShu/XVim
+
+set nopasteboard
+set smartcase
+set clipboard=unnamed
+
+
+map H ^
+map L $
+emap L g_
+map ,H H
+map ,L L
+
+imap kj <ESC>
+vmap kj <ESC>
+
+nmap K 5k
+nmap J 5j
+
+vmap K 5k
+vmap J 5j
+
+map ,K K
+map ,J J
+
+nmap S i<CR><ESC>
+
+map n nzzzv
+map N Nzzzv
+
+noremap r <c-r>
+
+vmap ,r r
+vmap Y y$  
+
+nmap gyy yyPgccj
+
+map m %
+
+nmap M $v%
+nmap MM ^v%
+
+noremap ,mm m
