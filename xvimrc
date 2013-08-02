@@ -42,3 +42,9 @@ nmap M $v%
 nmap MM ^v%
 
 noremap ,mm m
+
+" Easy window navigation from keyboard too
+map sh <C-w>h
+map sj <C-w>j
+map sk <C-w>k
+map sl <C-w>l
