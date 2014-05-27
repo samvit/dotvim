@@ -269,12 +269,9 @@ vnoremap < <<CR>gv
 noremap NN =ip 
 
 "Plugin Configurations
-"
-"Command-T 
-noremap <leader>T :CommandT
-noremap <space><space> <Esc>:CommandT<CR>
-noremap <leader>f <Esc>:CommandTFlush<CR>
-noremap <leader>m <Esc>:CommandTBuffer<CR>
+
+"CtrlP
+noremap <space><space> <Esc>:CtrlP<CR>
 
 "Conque
 map <leader>c :ConqueTermSplit bash
