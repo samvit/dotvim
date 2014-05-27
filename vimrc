@@ -272,7 +272,6 @@ noremap NN =ip
 "
 "Command-T 
 noremap <leader>T :CommandT
-noremap <leader>o <Esc>:CommandT<CR>
 noremap <space><space> <Esc>:CommandT<CR>
 noremap <leader>f <Esc>:CommandTFlush<CR>
 noremap <leader>m <Esc>:CommandTBuffer<CR>
@@ -283,6 +282,7 @@ map <leader>cv :ConqueTermVSplit bash
 
 "NERDTRee
 map <space> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
 "Tagbar
 nmap <leader>t :TagbarToggle<CR>
@@ -328,10 +328,13 @@ imap <M-:> <Esc>:AppendAllClosingFormSymbols<CR>a
 nmap <M-:> <Esc>:AppendAllClosingFormSymbols<CR>
 
 "Rainbow Parenthesis
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 "gitgutter
 highlight clear SignColumn
+set tabstop=4
+set shiftwidth=4
+
