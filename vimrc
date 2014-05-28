@@ -123,9 +123,6 @@ if has("gui_macvim")
   set cursorline
 endif
 
-"So we can split a line somewhere
-nmap S i<CR><ESC>
-
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
@@ -271,7 +268,7 @@ noremap NN =ip
 "Plugin Configurations
 
 "CtrlP
-noremap <space><space> <Esc>:CtrlP<CR>
+noremap <space><space> <Esc>:CtrlPMixed<CR>
 
 "Conque
 map <leader>c :ConqueTermSplit bash
@@ -304,8 +301,8 @@ map <leader>a :Ack
 " <leader>a<motion>, or 
 
 "vim-seek
-let g:SeekKey = 'f'
-let g:SeekBackKey = 'F'
+let g:SeekKey = 's'
+let g:SeekBackKey = 'S'
 
 if has("gui_running")
     set guifont=Monaco\ for\ Powerline:h13

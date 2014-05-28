@@ -91,9 +91,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = git@github.com:kien/ctrlp.vim.git
-[submodule "bundle/vim-seek"]
-	path = bundle/vim-seek
-	url = git@github.com:goldfeld/vim-seek.git
 [submodule "bundle/camelcasemotion"]
 	path = bundle/camelcasemotion
 	url = git@github.com:vim-scripts/camelcasemotion.git
@@ -119,3 +116,6 @@
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
     
+[submodule "bundle/vim-seek"]
+	path = bundle/vim-seek
+	url = git@github.com:goldfeld/vim-seek.git
