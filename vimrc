@@ -268,7 +268,9 @@ noremap NN =ip
 "Plugin Configurations
 
 "CtrlP
-noremap <space><space> <Esc>:CtrlPMixed<CR>
+noremap <space><space> <Esc>:CtrlP .<CR>
+let g:ctrlp_working_path_mode = 'c' "index on CWD
+set wildignore+=*.pyc,
 
 "Conque
 map <leader>c :ConqueTermSplit bash
