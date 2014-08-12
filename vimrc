@@ -270,6 +270,8 @@ noremap NN =ip
 "CtrlP
 noremap <space><space> <Esc>:CtrlP .<CR>
 let g:ctrlp_working_path_mode = 'c' "index on CWD
+let g:ctrlp_switch_buffer = 'e' " Dont jump to the other buffer if the file is already open
+
 set wildignore+=*.pyc,
 
 "Conque
