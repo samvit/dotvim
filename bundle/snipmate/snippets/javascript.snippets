@@ -88,6 +88,13 @@ snippet con
 #Log specific variable
 snippet log
 	console.log("${1: Variable} = ", $1);${2}
+# Comment header
+snippet //=
+	// =============================================================================
+	// ==================================== ${1}
+	// =============================================================================
+snippet //-
+	// ------------------------------------- ${1}
 snippet parallel
 	async.parallel({
 		one: function (parallelCallback) {
