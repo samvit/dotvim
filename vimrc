@@ -273,6 +273,7 @@ let g:ctrlp_working_path_mode = 'c' "index on CWD
 let g:ctrlp_switch_buffer = 'e' " Dont jump to the other buffer if the file is already open
 
 set wildignore+=*.pyc,
+let g:ctrlp_custom_ignore = 'node_modules\|\.DS_Store\|\.git\|venv'
 
 "Conque
 map <leader>c :ConqueTermSplit bash
