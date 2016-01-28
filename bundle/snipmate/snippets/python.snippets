@@ -23,9 +23,17 @@ snippet ifmain
 snippet _
 	__${1:init}__${2}
 
-#Log specific variable
+# Log specific variable
 snippet log
 	logging.debug("${1: Variable} = %s" % $1)${2}
+
+# General logging
+snippet info
+	logging.info("${1}")
+snippet debug
+	logging.debug("${1}")
+snippet warn
+	logging.warn("${1}")
 
 snippet #=
 	# =============================================================================
