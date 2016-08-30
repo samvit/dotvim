@@ -141,6 +141,9 @@ nnoremap <leader>es :e ~/junk/scratchPad.txt<CR>
 "For editing the bashrc file more easily:
 nnoremap <leader>eb :vs ~/.bashrc<CR> 
 
+"For editing the personal_log more easily:
+nnoremap <leader>el :vs ~/.personal_log<CR> 
+
 "colors
 set t_Co=256
 colorscheme vividchalk
@@ -208,7 +211,7 @@ map sl <C-w>l
 " Easy window navigation from keyboard too
 map sH <C-w>H
 map sJ <C-w>J
-map sK <C-w>H
+map sK <C-w>K
 map sL <C-w>L
 
 "Easy tab navigation 
@@ -286,9 +289,16 @@ let NERDTreeIgnore = ['\.pyc$']
 "Tagbar
 nmap <leader>t :TagbarToggle<CR>
 
+"YouCompleteMe
+nnoremap + :YcmCompleter GoTo<CR>
+nnoremap _ :YcmCompleter GoToReferences<CR>
+let g:ycm_autoclose_preview_window_after_completion=1
+
+let g:ycm_key_list_select_completion = ['<Enter>', '<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<S-Enter>', '<C-k>', '<Up>']
+
 "EasyMotion triggers:
 map ,, <leader><leader>
-
 "JSBeautify 
 "This plugin is mapped to ,ff to format the current javascript file
 
