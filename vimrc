@@ -1,9 +1,37 @@
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin("plugins")
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" TODO:
+" Add selet-next-block plugin stuff
+" Add all my custom snippets (snipmate has a new interface now)
+" Add and configure an autocopletion plugin system
+" Investigate using unite.vim to replace [ctrlp, ctrlspace, ack]
+
+Plugin 'MarcWeber/vim-addon-mw-utils' " Used by snipmate
+Plugin 'Raimondi/delimitMate'
+Plugin 'majutsushi/tagbar'
+Plugin 'Yggdroot/indentLine'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-ctrlspace/vim-ctrlspace'
+Plugin 'chrisbra/csv.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'garbas/vim-snipmate'
+Plugin 'mileszs/ack.vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'goldfeld/vim-seek'
+Plugin 'tpope/vim-repeat'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tomtom/tlib_vim' " Used by snipmate
+Plugin 'tpope/vim-surround'
+Plugin 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -26,6 +54,8 @@ map <silent> <m-p> :cp <cr>
 map <silent> <m-n> :cn <cr>
 
 syntax enable
+
+set hidden " Needed by ctrl-space plugin. Don't fully understand this line
 
 set cf  " Enable error files & error jumping.
 set clipboard=unnamed  " Yanks go on clipboard instead.
