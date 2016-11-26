@@ -1,5 +1,3 @@
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
 filetype on  " Automatically detect file types.  set nocompatible  " no vi compatibility.
 " Add recently accessed projects menu (project plugin)
 set viminfo^=\!
