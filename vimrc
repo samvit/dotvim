@@ -1,5 +1,5 @@
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin("plugins")
+call vundle#begin("~/.vim/bundle/plugins")
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
