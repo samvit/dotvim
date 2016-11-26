@@ -26,6 +26,8 @@ set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
+set colorcolumn=80 "Set column 80 to be grey. Contain code width
+
 
 " Formatting
 set ts=2  " Tabs are 2 spaces
@@ -171,23 +173,6 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what I use
 
-"Relative Line Numbering
-" function! NumberToggle()
-"   if(&relativenumber == 1)
-"     set number
-"   else
-"     set relativenumber
-"   endif
-" endfunc
-" 
-" nnoremap <leader>rl :call NumberToggle()<cr>
-" "Absolute numbering on FocusLost
-" :au FocusLost * :set number
-" :au FocusGained * :set relativenumber
-" "Absolute numbering on Insert Mode
-" autocmd InsertEnter * :set number
-" autocmd InsertLeave * :set relativenumber
-
 "Syntax hilight ejs files as html+js -- edit killed this after i added the vim-jst plugin
 au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.cljs set filetype=clojure
@@ -300,10 +285,6 @@ map ,, <leader><leader>
 "JSBeautify 
 "This plugin is mapped to ,ff to format the current javascript file
 
-"Vim-Powerline
-let g:Powerline_symbols = 'fancy'
-set encoding=utf-8 " Necessary to show unicode glyphs
-
 "Rename
 ":rename filename
 "to rename the current file
@@ -318,12 +299,8 @@ let g:SeekKey = 's'
 let g:SeekBackKey = 'S'
 
 if has("gui_running")
-    set guifont=Monaco\ for\ Powerline:h13
     set guioptions=egmrt
 endif
-
-"NarrowRegion
-map :narrow<CR> :NarrowRegion<CR>
 
 " Turn off delimateMate for Clojure files (It's annoying with Clojure)
 au! FileType clojure let b:loaded_delimitMate=1
