@@ -1,3 +1,13 @@
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
 filetype on  " Automatically detect file types.  set nocompatible  " no vi compatibility.
 " Add recently accessed projects menu (project plugin)
 set viminfo^=\!
