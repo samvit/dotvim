@@ -175,9 +175,9 @@ nnoremap <leader>sv :so $MYVIMRC<CR>
 nnoremap <leader>ec :vs ~/.vim/complaints.txt<CR> 
 
 "For editing the complaints file more easily:
-nnoremap :todo :vs ~/Dropbox/todo.txt<CR>
+nnoremap :todo :vs ~/Dropbox/notes/todo.txt<CR>
 "For accessing the scratchpad file more easily:
-nnoremap <leader>es :e ~/junk/scratchPad.txt<CR> 
+nnoremap <leader>es :e ~/Dropbox/notes/scratchPad.txt<CR> 
 
 "For editing the bashrc file more easily:
 nnoremap <leader>eb :vs ~/.bashrc<CR> 
