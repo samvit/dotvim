@@ -16,7 +16,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Yggdroot/indentLine'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-ctrlspace/vim-ctrlspace'
-Plugin 'chrisbra/csv.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'Valloric/YouCompleteMe'
@@ -34,6 +33,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomtom/tlib_vim' " Used by snipmate
 Plugin 'tpope/vim-surround'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'jparise/vim-graphql'
+Plugin 'ianks/vim-tsx'
+Plugin 'tmhedberg/matchit'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -118,7 +121,7 @@ noremap <leader>r r
 noremap Y y$  
 
 "So I can duplicate and coment in one keystroke
-vmap gy ygvgcp
+vmap gy ygvgc<ESC>P
 nmap gyy yyPgccj
 
 "map cap h and cap l to beg and end of line=more intuitive
@@ -301,7 +304,7 @@ let g:ctrlp_working_path_mode = 'c' "index on CWD
 let g:ctrlp_switch_buffer = 'e' " Dont jump to the other buffer if the file is already open
 
 set wildignore+=*.pyc,
-let g:ctrlp_custom_ignore = 'node_modules\|\.DS_Store\|\.git\|venv'
+let g:ctrlp_custom_ignore = 'node_modules\|\.DS_Store\|\.git\|venv\|build\|builds'
 
 "Conque
 map <leader>c :ConqueTermSplit bash
@@ -361,6 +364,7 @@ nmap <M-:> <Esc>:AppendAllClosingFormSymbols<CR>
 
 "gitgutter
 highlight clear SignColumn
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
+"Use this to convert snake case to camel case: %s#\%(\%(\k\+\)\)\@<=_\(\k\)#\u\1#g
