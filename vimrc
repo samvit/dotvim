@@ -19,7 +19,6 @@ Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'garbas/vim-snipmate'
 Plugin 'mileszs/ack.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'tomtom/tcomment_vim'
@@ -280,10 +279,10 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " Buffer Window Resizing
-nnoremap <c-right> 5<c-w>>
-nnoremap <c-left> 5<c-w><
-nnoremap <c-up> 5<c-w>+
-nnoremap <c-down> 5<c-w>-
+nnoremap <c-l> 5<c-w>>
+nnoremap <c-h> 5<c-w><
+nnoremap <c-i> 5<c-w>+
+nnoremap <c-j> 5<c-w>-
 
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
